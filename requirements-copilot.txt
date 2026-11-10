@@ -1,0 +1,2 @@
+# Optional remote generation; evidence tools run without this dependency.
+groq==1.7.0

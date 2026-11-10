@@ -1,0 +1,18 @@
+[
+ {"id":"A01","question":"En el manual TechCorp, ¿quién confirma las tareas y quién comunica condiciones inseguras?","expected_documents":["TC-MAN-001"],"chunk_prefixes":["e6e5b2ec"],"category":"manual"},
+ {"id":"A02","question":"¿El manual ficticio TechCorp reemplaza una evaluación profesional o las fuentes oficiales?","expected_documents":["TC-MAN-001"],"chunk_prefixes":["8c0624d8"],"category":"manual"},
+ {"id":"A03","question":"Según el procedimiento TechCorp, ¿cómo se documenta el motivo de una observación descartada?","expected_documents":["TC-PRO-003"],"chunk_prefixes":["da58a037"],"category":"revision"},
+ {"id":"A04","question":"¿Qué tratamiento propone TechCorp ante oclusión, confianza baja o asociación ambigua?","expected_documents":["TC-PRO-003"],"chunk_prefixes":["da58a037"],"category":"revision"},
+ {"id":"A05","question":"En la matriz TechCorp, ¿qué riesgos se consideran durante manipulación de materiales?","expected_documents":["TC-MAT-002"],"chunk_prefixes":["1c6be18e"],"category":"matriz"},
+ {"id":"A06","question":"¿La matriz TechCorp establece una lista universal de EPP obligatorios?","expected_documents":["TC-MAT-002"],"chunk_prefixes":["cf437b8d"],"category":"matriz"},
+ {"id":"A07","question":"¿Qué relación tienen las condiciones meteorológicas y los accesos con la planificación ficticia de altura de TechCorp?","expected_documents":["TC-PRO-004"],"chunk_prefixes":["01ba1763"],"category":"altura"},
+ {"id":"A08","question":"¿Una imagen de arnés permite a TechCorp verificar el punto de anclaje y su ajuste?","expected_documents":["TC-PRO-004"],"chunk_prefixes":["a3a73f2a"],"category":"altura"},
+ {"id":"A09","question":"¿Quién registra las acciones en el plan de comunicaciones de TechCorp?","expected_documents":["TC-PLA-005"],"chunk_prefixes":["14b966ae"],"category":"emergencia"},
+ {"id":"A10","question":"¿El plan ficticio de emergencias de TechCorp incluye teléfonos reales o instrucciones de rescate?","expected_documents":["TC-PLA-005"],"chunk_prefixes":["14b966ae"],"category":"emergencia"},
+ {"id":"A11","question":"¿Qué copia contiene el instructivo de la constancia con identificación de empresa, CUIT y domicilio del establecimiento?","expected_documents":["NORM-005"],"chunk_prefixes":["cc2dbbf1"],"category":"normativa","source_types":["official"]},
+ {"id":"A12","question":"¿Dónde se describe que el consentimiento para tratar datos personales debe ser libre, expreso e informado?","expected_documents":["NORM-010"],"chunk_prefixes":["198a312b"],"category":"normativa","source_types":["official"]},
+ {"id":"A13","question":"¿Qué hago con eso?","expected_documents":[],"chunk_prefixes":[],"category":"ambigua"},
+ {"id":"A14","question":"¿Cuál es el salario neto de cada empleado de TechCorp en septiembre?","expected_documents":[],"chunk_prefixes":[],"category":"fuera_corpus"},
+ {"id":"A15","question":"¿Cómo resuelve TechCorp ecuaciones de mecánica cuántica relativista?","expected_documents":[],"chunk_prefixes":[],"category":"fuera_corpus"},
+ {"id":"A16","question":"¿Hay contradicción entre el manual y el procedimiento TechCorp acerca de confirmar automáticamente un incumplimiento sin revisión humana?","expected_documents":["TC-MAN-001","TC-PRO-003"],"chunk_prefixes":["8c0624d8","da58a037"],"category":"posible_contradiccion"}
+]

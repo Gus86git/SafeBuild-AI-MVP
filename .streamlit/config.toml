@@ -1,0 +1,29 @@
+[theme]
+base = "dark"
+primaryColor = "#29E6CF"
+backgroundColor = "#07141A"
+secondaryBackgroundColor = "#152D36"
+textColor = "#F2F7F8"
+font = "sans serif"
+baseFontSize = 16
+baseRadius = "0.7rem"
+buttonRadius = "0.5rem"
+borderColor = "#2B5157"
+showWidgetBorder = true
+chartCategoricalColors = ["#29E6CF", "#89B8ED", "#F0B44B", "#C4ADDF"]
+
+[theme.sidebar]
+backgroundColor = "#0B1B22"
+secondaryBackgroundColor = "#152D36"
+textColor = "#F2F7F8"
+primaryColor = "#29E6CF"
+borderColor = "#3E6970"
+
+[server]
+maxUploadSize = 100
+enableCORS = true
+enableXsrfProtection = true
+headless = true
+
+[browser]
+gatherUsageStats = false

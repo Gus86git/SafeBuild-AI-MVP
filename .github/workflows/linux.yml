@@ -1,0 +1,70 @@
+name: Linux compatibility
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: linux-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONUTF8: "1"
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      ANONYMIZED_TELEMETRY: "False"
+      YOLO_OFFLINE: "true"
+      YOLO_AUTOINSTALL: "false"
+      GROQ_API_KEY: ""
+      GROQ_MODEL: ""
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements*.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: System dependencies
+        run: sudo apt-get update && sudo apt-get install -y libgl1
+      - name: Install complete CPU application
+        run: |
+          python -m pip install -r requirements.txt -r requirements-dev.txt
+          python -m pip check
+      - name: Static checks and distribution scan
+        run: |
+          python -m ruff check app.py safeguard scripts tests
+          python -m ruff format --check app.py safeguard scripts tests
+          python scripts/check_distribution.py
+      - name: Import application dependencies
+        run: python scripts/ci_checks.py imports
+      - name: Python regression with synthetic fixtures
+        run: python scripts/ci_checks.py tests
+      - name: JavaScript component regression
+        run: node --test tests/test_audio_component.mjs
+      - name: Basic Streamlit startup
+        run: python scripts/ci_checks.py smoke
+      - name: Record unavailable external validations
+        if: always()
+        run: |
+          python scripts/ci_checks.py resources
+          cat output/ci/resource-status.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Preserve test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-validation
+          path: output/ci/
+          if-no-files-found: warn
+          retention-days: 7

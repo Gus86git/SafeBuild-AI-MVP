@@ -1,0 +1,22 @@
+[
+ {"id":"Q01","question":"¿Qué documentación registra la entrega de ropa de trabajo y elementos de protección personal?","expected_documents":["NORM-005"],"source_types":["official"],"category":"normativa","expected_locator":null},
+ {"id":"Q02","question":"¿Qué establece la Ley 19.587 sobre obligaciones del empleador y protección personal?","expected_documents":["NORM-001"],"source_types":["official"],"category":"normativa","expected_locator":null},
+ {"id":"Q03","question":"¿Qué debe contener el legajo técnico de higiene y seguridad en la construcción?","expected_documents":["NORM-003"],"source_types":["official"],"category":"normativa","expected_locator":null},
+ {"id":"Q04","question":"¿Qué establece la resolución 51/97 sobre el Programa de Seguridad de una obra?","expected_documents":["NORM-004"],"source_types":["official"],"category":"normativa","expected_locator":null},
+ {"id":"Q05","question":"¿Qué medidas se mencionan para demolición, excavaciones y submuraciones?","expected_documents":["NORM-009"],"source_types":["official"],"category":"normativa","expected_locator":null},
+ {"id":"Q06","question":"¿Qué resolución aprueba medidas de seguridad para trabajos en altura en 2023?","expected_documents":["NORM-006"],"source_types":["official"],"category":"normativa","expected_locator":null},
+ {"id":"Q07","question":"¿Qué reglamento técnico de equipos de protección personal aprueba la resolución 18/2025?","expected_documents":["NORM-008"],"source_types":["official"],"category":"normativa","expected_locator":null},
+ {"id":"Q08","question":"¿Cómo define la Ley 25.326 los datos personales?","expected_documents":["NORM-010"],"source_types":["official"],"category":"normativa","expected_locator":null},
+ {"id":"Q09","question":"¿Qué indica el Decreto 911/96 sobre protección de la cabeza y cascos?","expected_documents":["NORM-002"],"source_types":["official"],"category":"normativa","expected_locator":null},
+ {"id":"Q10","question":"¿Cómo se acredita documentalmente que un trabajador recibió sus elementos protectores?","expected_documents":["NORM-005"],"source_types":["official"],"category":"parafrasis","expected_locator":null},
+ {"id":"Q11","question":"¿Qué dice la descripción de la publicación OIT sobre la reunión de expertos de 2022?","expected_documents":["NORM-007"],"source_types":["technical_guide"],"category":"guia_parcial","expected_locator":null},
+ {"id":"Q12","question":"¿Cómo gestiona TechCorp una observación visual pendiente de revisión?","expected_documents":["TC-PRO-003"],"source_types":["simulated_manual","simulated_procedure"],"category":"procedimiento","expected_locator":null},
+ {"id":"Q13","question":"¿Qué roles intervienen en la comunicación de emergencias de TechCorp?","expected_documents":["TC-PLA-005"],"source_types":["simulated_manual","simulated_procedure"],"category":"procedimiento","expected_locator":null},
+ {"id":"Q14","question":"¿Qué riesgos y protecciones considera la matriz TechCorp para corte y amolado?","expected_documents":["TC-MAT-002"],"source_types":["simulated_manual","simulated_procedure"],"category":"manual","expected_locator":null},
+ {"id":"Q15","question":"¿Qué se revisa antes de una tarea en altura en la simulación TechCorp?","expected_documents":["TC-PRO-004"],"source_types":["simulated_manual","simulated_procedure"],"category":"procedimiento","expected_locator":null},
+ {"id":"Q16","question":"¿Cuáles son las responsabilidades de supervisión y Seguridad e Higiene en el manual TechCorp?","expected_documents":["TC-MAN-001"],"source_types":["simulated_manual","simulated_procedure"],"category":"manual","expected_locator":null},
+ {"id":"Q17","question":"Si la cámara no ve un casco, ¿puede TechCorp dar por confirmada su ausencia?","expected_documents":["TC-PRO-003"],"source_types":["simulated_manual","simulated_procedure"],"category":"parafrasis","expected_locator":null},
+ {"id":"Q18","question":"¿Cuál es la órbita de Neptuno y la composición de sus lunas?","expected_documents":[],"source_types":["official","technical_guide"],"category":"sin_respuesta","expected_locator":null},
+ {"id":"Q19","question":"¿Cuál es la contraseña WiFi de TechCorp?","expected_documents":[],"source_types":["simulated_manual","simulated_procedure"],"category":"sin_respuesta","expected_locator":null},
+ {"id":"Q20","question":"¿Cuántos accidentes tuvo Torre Norte ayer?","expected_documents":[],"source_types":["official","simulated_manual","simulated_procedure"],"category":"sin_datos_operativos","expected_locator":null}
+]

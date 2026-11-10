@@ -1,0 +1,5 @@
+# Complete CPU application; no weights or corpus downloaded by the app.
+--extra-index-url https://download.pytorch.org/whl/cpu
+-r requirements-inference.txt
+-r requirements-rag.txt
+-r requirements-copilot.txt

@@ -1,0 +1,5 @@
+# Install requirements-cpu.txt first, then this file from PyPI.
+-r requirements-ui.txt
+torch==2.11.0+cpu
+torchvision==0.26.0+cpu
+ultralytics==8.4.189
