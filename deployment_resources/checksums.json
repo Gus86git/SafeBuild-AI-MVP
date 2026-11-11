@@ -1,0 +1,21 @@
+{
+  "documents.json": "27eff127f130316250bdc4fbc350613178db7c9759043b8da64b250a69d070d2",
+  "embedding-manifest.json": "869c62840dffbf36e742955397f68817e234b45428b37cca1798ae4bd9f11012",
+  "epp-v1.pt": "9b95a0cb0e44f82b33521eea2e004716a86d6b8502afb069aa05c7c7319af578",
+  "model-authorization.json": "c5d5b76c1dc5b6361517326c1dff44abf0262112dc6c703f0eb3871db8bd3d81",
+  "documents/NORM-001.docx": "0f1fb06f96f28f6a98ac2ed144ee53e052c1aebc3c27d521bad594b2208e917a",
+  "documents/NORM-002.docx": "09675acd08172a45606364b20db796ebb07034b2fddd678cc64f9be534001cdc",
+  "documents/NORM-003.docx": "f808378d00f759d937fa054d706e509f753c4a87a2b50546d9748fe2f29d448e",
+  "documents/NORM-004.docx": "cde2df16fa5e603188574907d14aebed71f7e3cffa1f73eeb72fb29f23093c4d",
+  "documents/NORM-005.docx": "e7622e3a80737d8c72a7f6ed02bb81019ffd59a6931602c12d4d9159c89ce01f",
+  "documents/NORM-006.docx": "6040c44fe80d08faf03c4c7f54f9f820d39d08248dd75b9ab5bd02a5b980cca5",
+  "documents/NORM-007.docx": "02eb13e0ee291f73e1d37ce0f1df85831d85c62850d419b085e433ed986f828e",
+  "documents/NORM-008.docx": "6a02b5d48a6c25c5244b8a20498cc98f328b6aef8ad15ca51c483a5e34b617a3",
+  "documents/NORM-009.docx": "bc014bbcdbccadfe092baa9a01c5cba2f84ea475b5105ba90bd9ca7b677723d2",
+  "documents/NORM-010.docx": "fd364582f5e061339616667f7c1fd7fd0e84b0fbe65502d0a5fc924bd2e59a5c",
+  "documents/TC-MAN-001.md": "8a8578076eb7bcd8614c10b18d04b1ceeff957214f005eb1a21b02df6d01c2fb",
+  "documents/TC-MAT-002.md": "0a61670a82f319ccb4ebdd08631354fd65f94cde1fefa789fe21299929a870a9",
+  "documents/TC-PLA-005.md": "f6414fe217c0d9cb0b782c554746d72026f671691ad39979d1150a5b7702bd66",
+  "documents/TC-PRO-003.md": "b36c45e9ba28b539b523c935d12de9301dd6b6b32248c739b79e9ee12c51dfaa",
+  "documents/TC-PRO-004.md": "e5d006fdf969c921c8eb8866f9618cd3b7335c9725524015a9af1261cfb31cc7"
+}

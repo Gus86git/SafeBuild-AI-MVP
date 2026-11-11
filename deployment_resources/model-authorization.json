@@ -1,0 +1,22 @@
+{
+  "models/epp_v1/best.pt": {
+    "approved": true,
+    "sha256": "9b95a0cb0e44f82b33521eea2e004716a86d6b8502afb069aa05c7c7319af578",
+    "source": "Modelo V1 aportado por el equipo; entrenamiento Colab YOLO26n con Construction-PPE; hash coincidente con notebook y metadatos",
+    "license": "Upstream Ultralytics/Construction-PPE AGPL-3.0; derechos de redistribucion y uso empresarial de este artefacto no auditados. Uso local autorizado por el titular del proyecto.",
+    "version": "EPP V1",
+    "expected_classes": [
+      "helmet",
+      "gloves",
+      "vest",
+      "boots",
+      "goggles",
+      "none",
+      "Person",
+      "no_helmet",
+      "no_goggle",
+      "no_gloves",
+      "no_boots"
+    ]
+  }
+}

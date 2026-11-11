@@ -1,5 +1,19 @@
 # Estado de validación del candidato
 
+## Actualización: recursos de demo, 11 de noviembre de 2026
+
+- Linux del commit inicial: [ejecución satisfactoria](https://github.com/Gus86git/SafeBuild-AI-MVP/actions/runs/42914189581), instalación completa, 219 pruebas Python, 18 JavaScript e inicio Streamlit.
+- Después de agregar provisión: suite Windows de 224 pruebas satisfactoria (146,984 s); posteriormente, seis pruebas de provisión satisfactorias (incluyen un caso adicional de ingesta completa e idempotencia). No confundir este total con 230 casos únicos: cinco se superponen.
+- JavaScript: 18/18; arranque HTTP con base temporal satisfactorio; Ruff sin hallazgos.
+- Recursos reales locales: 15 documentos, 388 fragmentos, 388 vectores Chroma; búsqueda híbrida devuelve cinco fragmentos sin degradación. Construcción semántica: 215,19 s en esta máquina, no una medición del hosting.
+- YOLO V1: carga por hash, 11 clases y una inferencia sobre imagen vacía ejecutadas. Es una comprobación del runtime, no de precisión ni de detección de EPP real.
+- Descarga HTTP de pesos de embeddings no ejecutada en esta verificación: se reutilizó la copia local verificada. La integridad, el rechazo de descargas inválidas y la reutilización están cubiertos con pruebas aisladas.
+- No se hicieron llamadas a Groq ni transcripciones. La UI desplegada, micrófono real, memoria del hosting y persistencia siguen pendientes de comprobación por el operador.
+
+La ejecución inicial dentro del sandbox de Windows falló por permisos de temporales; se repitió fuera del aislamiento y pasó. Los resultados siguientes corresponden a la preparación histórica inicial, no al estado actualizado de recursos.
+
+## Registro histórico: preparación inicial
+
 Fecha: 10 de noviembre de 2026. Plataforma ejecutada: Windows, Python 3.12, entorno CPU existente. No se instaló un entorno nuevo ni se ejecutó Linux durante esta preparación.
 
 | Comprobación | Resultado |

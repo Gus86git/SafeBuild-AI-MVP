@@ -12,6 +12,7 @@ output/
 data/
 models/
 *.pt
+!deployment_resources/epp-v1.pt
 *.onnx
 *.safetensors
 *.sqlite*

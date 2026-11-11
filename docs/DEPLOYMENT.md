@@ -1,5 +1,7 @@
 # Recursos y compatibilidad de despliegue
 
+**Actualización 11/11/2026:** la provisión de demo está implementada. Consultar [la guía de continuidad](CONTINUIDAD_STREAMLIT.md) para los recursos incluidos, el botón de preparación semántica y las pruebas online pendientes. El flujo Linux del commit inicial pasó en [GitHub Actions](https://github.com/Gus86git/SafeBuild-AI-MVP/actions/runs/42914189581); esto no verifica por sí solo la instancia Streamlit desplegada.
+
 ## Entorno
 
 Python 3.12, dependencias de `requirements.txt` y bibliotecas del sistema listadas en `packages.txt`. La validación Linux se prepara en GitHub Actions con `ubuntu-latest`; no requiere instalar Linux, WSL o Docker en la computadora de desarrollo.
@@ -8,7 +10,7 @@ La configuración omite una dirección de escucha fija: el destino debe definirl
 
 `requirements-ui.txt`, `requirements-inference.txt`, `requirements-rag.txt` y `requirements-copilot.txt` mantienen responsabilidades separadas; `requirements.txt` los reúne. `requirements-cpu.txt` se conserva como instalación explícita CPU alternativa, sin confundir su índice exclusivo con el índice para el resto de paquetes. Las versiones directas están fijadas; se necesita una instalación Linux satisfactoria antes de generar o afirmar un lock transitivo validado.
 
-## Recursos excluidos que habilitan funciones
+## Recursos y condiciones de ejecución
 
 | Recurso | Provisión y comprobación |
 |---|---|

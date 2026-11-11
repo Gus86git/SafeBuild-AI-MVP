@@ -54,7 +54,7 @@ Abrir <http://127.0.0.1:8501>. Detener con `Ctrl+C`.
 
 `requirements.txt` reúne UI, inferencia CPU, RAG y Groq. Utiliza el índice oficial de PyTorch para sus ruedas CPU. Las versiones directas están fijadas; no es un lock transitivo de Linux. La instalación limpia en Ubuntu se comprueba con el workflow incluido y su resultado debe revisarse antes de publicar.
 
-Los pesos, embeddings, corpus e índices no se incluyen ni se descargan al arrancar. Sin ellos la interfaz informa qué recursos faltan; la navegación y las consultas operativas disponibles se conservan. La instalación de paquetes requiere red; los modelos se preparan por separado y con autorización.
+El paquete de demo incluye el modelo EPP V1 y 15 documentos con hashes. El arranque prepara los archivos locales y BM25 sin descargas. Los embeddings oficiales y Chroma se preparan con el botón **Preparar búsqueda semántica**, dentro de Configuración de Copilot. Consultar [puesta en marcha y continuidad](docs/CONTINUIDAD_STREAMLIT.md), incluyendo límites de memoria, licencias, almacenamiento y pruebas online pendientes.
 
 ## Configuración
 

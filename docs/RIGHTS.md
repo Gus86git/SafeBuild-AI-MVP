@@ -12,7 +12,9 @@ Los iconos vectoriales y el CSS existentes se conservan. No se eliminaron atribu
 
 ## Recursos separados
 
-Pesos YOLO, embeddings, documentos, índices y medios de prueba no están incluidos. Para incorporarlos: comprobar procedencia, licencia, privacidad, restricciones de distribución y hashes. La autorización local de ejecutar un peso no equivale a permiso de redistribuirlo.
+El paquete de demo incorpora ahora el peso EPP V1 y los 15 documentos aportados, con hashes y metadatos originales, para el despliegue solicitado. No incorpora fotografías de prueba, bases operativas ni secretos. Los embeddings se descargan mediante una acción explícita desde el repositorio oficial, con revisión y hashes fijados; su ficha declara Apache-2.0: https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 .
+
+El manifiesto de YOLO conserva la declaración original: upstream Ultralytics/Construction-PPE AGPL-3.0; derechos de redistribución y uso empresarial no auditados. Esta entrega no cambia ni certifica esa declaración. Revisar las obligaciones aplicables antes de distribución pública/comercial. El corpus conserva las advertencias de transcripciones normativas no certificadas y manuales ficticios.
 
 ## Dependencias
 

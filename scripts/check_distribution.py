@@ -4,6 +4,7 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+import hashlib
 
 ROOT = Path(__file__).resolve().parents[1]
 IGNORED = {".git", ".venv", "__pycache__", ".ruff_cache", ".pytest_cache", "output"}
@@ -19,11 +20,20 @@ PATTERNS = [
 def check(path):
     relative = path.relative_to(ROOT)
     name = path.name.lower()
+    # Exact reviewed artifact; never a blanket exception for model files.
+    approved_weight = (
+        relative.as_posix() == "deployment_resources/epp-v1.pt"
+        and hashlib.sha256(path.read_bytes()).hexdigest()
+        == "9b95a0cb0e44f82b33521eea2e004716a86d6b8502afb069aa05c7c7319af578"
+    )
     prohibited = (
         name in {"secrets.toml", ".env", "authorized.json"}
         or name.startswith(".env.")
         and name != ".env.example"
-        or path.suffix.lower() in {".pt", ".safetensors", ".sqlite", ".sqlite3", ".db"}
+        or (
+            path.suffix.lower() in {".pt", ".safetensors", ".sqlite", ".sqlite3", ".db"}
+            and not approved_weight
+        )
         or relative.parts[0] in {"data", "models"}
     )
     if prohibited:

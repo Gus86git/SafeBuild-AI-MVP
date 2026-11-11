@@ -30,6 +30,15 @@ from safeguard import storage
 from safeguard.ui import presentation as ui
 
 ROOT = Path(__file__).resolve().parent
+
+
+@st.cache_resource(show_spinner=False)
+def prepare_demo_resources():
+    from safeguard.deployment import prepare
+
+    prepare(ROOT)
+
+
 PAGES = [
     "Inicio",
     "Dashboard",
@@ -931,6 +940,12 @@ def main():
     )
     st.session_state.setdefault("history_v1a", [])
     ui.apply_theme(st)
+    try:
+        prepare_demo_resources()
+    except Exception as exc:
+        st.warning(
+            f"No se completó la preparación de recursos ({type(exc).__name__}). Revise la guía de despliegue; las funciones disponibles siguen accesibles."
+        )
     with st.sidebar:
         ui.brand(st)
         ui.side_heading("Contexto de trabajo", "layers", st)
@@ -986,6 +1001,36 @@ def main():
             )
         controls_slot = st.container()
         copilot_settings = st.expander("Configuración de Copilot")
+        from safeguard.deployment import enabled, prepare_semantic
+
+        if enabled(ROOT):
+            with copilot_settings:
+                st.caption(
+                    "Documentos incluidos: normativa aportada y manuales ficticios TechCorp. BM25 funciona sin descargar embeddings."
+                )
+                if st.button("Preparar búsqueda semántica", key="prepare_semantic"):
+                    try:
+                        with st.spinner(
+                            "Descargando el modelo oficial verificado y preparando Chroma. La primera vez puede tardar varios minutos…"
+                        ):
+                            prepare_semantic(ROOT)
+                        from safeguard.rag.ui import release_resources
+                        from safeguard.copilot.ui import (
+                            release_resources as release_copilot,
+                        )
+
+                        release_resources()
+                        release_copilot()
+                        st.success(
+                            "Búsqueda semántica preparada. Ya puede seleccionar la recuperación híbrida."
+                        )
+                    except Exception as exc:
+                        st.warning(
+                            f"Preparación semántica incompleta ({type(exc).__name__}). BM25 continúa disponible; puede reintentar la preparación."
+                        )
+                st.caption(
+                    "Descarga desde Hugging Face con revisión y hashes fijados; no utiliza Groq. SQLite es compartida en esta demo y puede perderse al reiniciar el alojamiento: exporte los resultados y no cargue información confidencial."
+                )
         from safeguard.copilot.selection import invalidate_changed_scope
 
         if invalidate_changed_scope(st.session_state, context):
