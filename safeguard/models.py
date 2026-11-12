@@ -4,8 +4,27 @@ import hashlib
 import json
 import time
 import os
+import re
 from importlib import metadata
 from pathlib import Path
+
+
+def model_error(exc):
+    """Expose only import identifiers, never arbitrary exception text or secrets."""
+    detail = type(exc).__name__
+    if isinstance(exc, ImportError):
+        name = getattr(exc, "name", None)
+        if name and re.fullmatch(r"[A-Za-z_][A-Za-z0-9_.]*", name):
+            detail += f" · módulo: {name}"
+        library = re.search(r"\blib[A-Za-z0-9_+.-]+\.so(?:\.[0-9]+)*\b", str(exc))
+        symbol = re.search(
+            r"cannot import name ['\"]([A-Za-z_][A-Za-z0-9_]*)['\"]", str(exc)
+        )
+        if library:
+            detail += f" · biblioteca del sistema: {library.group()}"
+        if symbol:
+            detail += f" · símbolo: {symbol.group(1)}"
+    return detail
 
 
 def load_local_model(factory, root, paths=None):
@@ -39,7 +58,7 @@ def load_local_model(factory, root, paths=None):
                 errors,
             )
         except Exception as exc:
-            errors.append(f"{relative}: {type(exc).__name__}")
+            errors.append(f"{relative}: {model_error(exc)}")
     return None, None, errors
 
 

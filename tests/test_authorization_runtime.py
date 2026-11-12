@@ -5,10 +5,24 @@ from unittest.mock import Mock
 import hashlib
 import json
 import unittest
-from safeguard.models import load_authorized_model, runtime_model
+from safeguard.models import load_authorized_model, runtime_model, model_error
 
 
 class AuthorizationTests(unittest.TestCase):
+    def test_import_diagnostic_only_exposes_identifiers(self):
+        error = ImportError(
+            "libGL.so.1: cannot open shared object file; private-value", name="cv2"
+        )
+        detail = model_error(error)
+        self.assertIn("cv2", detail)
+        self.assertIn("libGL.so.1", detail)
+        self.assertNotIn("private-value", detail)
+        self.assertEqual(model_error(ValueError("private-value")), "ValueError")
+        self.assertIn(
+            "símbolo: missing",
+            model_error(ImportError("cannot import name 'missing' from 'example'")),
+        )
+
     def test_wrong_classes_rejected_after_authorized_load(self):
         with TemporaryDirectory() as root:
             self.artifact(
