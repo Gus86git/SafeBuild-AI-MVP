@@ -4,6 +4,10 @@
 
 ## Entorno
 
+Corrección del 12/11/2026: en Community Cloud, la carga de YOLO falló al importar `cv2` por ausencia de `libgthread-2.0.so.0`. `packages.txt` declara ahora `libglib2.0-0`, además de `libgl1`; el workflow instala ese mismo archivo para no mantener listas divergentes. El diagnóstico de importación muestra solo identificadores de módulo, biblioteca y símbolo, sin publicar el texto arbitrario de excepciones. La diferencia de Python observada en el alojamiento (3.14 frente al 3.12 de CI) no prueba por sí sola la causa de este fallo.
+
+Referencia del paquete: https://packages.debian.org/bookworm/amd64/libglib2.0-0/filelist .
+
 Python 3.12, dependencias de `requirements.txt` y bibliotecas del sistema listadas en `packages.txt`. La validación Linux se prepara en GitHub Actions con `ubuntu-latest`; no requiere instalar Linux, WSL o Docker en la computadora de desarrollo.
 
 La configuración omite una dirección de escucha fija: el destino debe definirla. En una PC usar explícitamente `--server.address 127.0.0.1`. CORS y protección XSRF permanecen activos. No copiar secretos locales al repositorio.

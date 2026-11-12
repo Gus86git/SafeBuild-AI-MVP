@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: "22"
       - name: System dependencies
-        run: sudo apt-get update && sudo apt-get install -y libgl1
+        run: sudo apt-get update && xargs -r -a packages.txt sudo apt-get install -y
       - name: Install complete CPU application
         run: |
           python -m pip install -r requirements.txt -r requirements-dev.txt
