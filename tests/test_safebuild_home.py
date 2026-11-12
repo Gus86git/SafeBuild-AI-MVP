@@ -68,6 +68,19 @@ class HomeMetricsTests(IsolatedUITest):
 
 
 class HomeNavigationTests(IsolatedUITest):
+    def test_presentation_video_opens_without_autoplay_or_navigation(self):
+        app = self.app()
+        self.assertFalse(app.get("video"))
+        site = app.selectbox(key="site").value
+        app.button(key="home_presentation_video").click().run()
+        self.assertFalse(app.exception)
+        videos = app.get("video")
+        self.assertEqual(len(videos), 1)
+        self.assertIn("T4TzRgYSeVY", videos[0].proto.url)
+        self.assertFalse(videos[0].proto.autoplay)
+        self.assertEqual(app.radio(key="navigation").value, "Inicio")
+        self.assertEqual(app.selectbox(key="site").value, site)
+
     def app(self):
         from streamlit.testing.v1 import AppTest
 

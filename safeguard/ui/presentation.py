@@ -134,12 +134,16 @@ def heading(title, subtitle, name, st):
 
 
 def home(settings, st):
+    @st.dialog("Presentación de SafeBuild AI", width="large")
+    def presentation_video():
+        st.video("https://www.youtube.com/watch?v=T4TzRgYSeVY", autoplay=False)
+
     with st.container(key="sb_hero"):
         st.markdown(
             """<div class="sb-hero-copy"><div class="sb-eyebrow">PLATAFORMA DE SEGURIDAD EN OBRA</div><h1>Bienvenido a <span class="sb-accent">SafeBuild AI</span></h1><p>Plataforma integral de visión por computadora y conocimiento especializado para la seguridad en construcción. Detecta EPP en imágenes y videos, permite revisar evidencias, consultar procedimientos mediante una base de conocimiento RAG y generar reportes operativos.</p></div><div class="sb-bracket" aria-hidden="true"></div><div class="sb-detection" aria-hidden="true"><strong>EPP · ejemplo visual</strong><span>✓</span> Casco<br><span>✓</span> Lentes de seguridad<br><span>✓</span> Chaleco reflectivo</div>""",
             unsafe_allow_html=True,
         )
-        buttons = st.columns([1.05, 1.25, 3.5])
+        buttons = st.columns([1.05, 1.25, 1.45, 2.05])
         with buttons[0]:
             if st.button(
                 "Analizar evidencias",
@@ -157,6 +161,14 @@ def home(settings, st):
                 width="stretch",
             ):
                 go("Copilot · Conocimiento", st)
+        with buttons[2]:
+            if st.button(
+                "Ver video de presentación",
+                key="home_presentation_video",
+                icon=":material/play_circle:",
+                width="stretch",
+            ):
+                presentation_video()
         st.markdown(
             '<span class="sb-concept">Imagen sintética conceptual · sin inferencia YOLO</span>',
             unsafe_allow_html=True,
